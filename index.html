@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>菜鸟教程(runoob.com)</title>
+	<meta name="referrer" content="no-referrer" />
+	<script>
+		function open_win() {
+
+			// fetch(new Request('http://192.168.14.44/cgi-bin/luci', {
+			// 	method: 'POST',
+			// 	headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+			// 	body: "luci_username=root&luci_password=2018"
+			// })).then((resp) => { console.log(resp) })
+			// fetch(new Request('',{
+			// method:'POST', 
+			// headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+			// body:"luci_username=root&luci_password=2018"
+			// })).then((resp)=>{console.log(resp)})
+
+			// address='http://192.168.14.44/cgi-bin/luci?luci_username=root&luci_password=2018&return_uri=http://192.168.14.44//luci-static/resources/';
+			address1='http://192.168.14.44/cgi-bin/luci/admin/status/overview';
+			address2='http://192.168.14.44/cgi-bin/luci/';
+			address='http://192.168.14.44/cgi-bin/luci?luci_username=root&luci_password=2018';
+			// address = 'http://192.168.14.44/index.html?luci_username=root&luci_password=2018'
+			var wd = window.open(address, '_blank');
+			if (wd)
+				wd.location.replace(address1);
+				// wd.document.execCommand('Refresh');
+
+				// location.replace("http://192.168.14.44/cgi-bin/luci/admin/status/overview");
+				// location.reload(true);
+			//window.open("http://192.168.14.44/cgi-bin/luci?luci_username=root&luci_password=2018");
+			// var xhr = new XMLHttpRequest();
+			// xhr.open('GET', address, true);
+			// xhr.onreadystatechange = function () {
+			// 	 console.log(xhr.responseText);
+			// };
+			// xhr.send();
+		}
+	</script>
+</head>
+
+<body>
+
+	<form>
+		<input type="button" value="打开窗口" onclick="open_win()">
+		<!-- <a href="http://192.168.14.44/cgi-bin/luci?luci_username=root&luci_password=2018" referrerpolicy="no-referrer">luci</a> -->
+
+	</form>
+
+</body>
+
+</html>

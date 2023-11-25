@@ -1,0 +1,32 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; " charset="utf-8">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function doSubmit() {
+            /*-------------------AJAX方式-------------------*/
+            jQuery.ajax({
+                //h5插件版本若为10.2.0之前,移动端登录需要带__device__=iPhone&terminal=H5参数
+                //url: 'http://IP:端口号/webroot/decision/login/cross/domain?__device__=iPhone&terminal=H5', 
+                //h5插件版本若为10.2.0之后,移动端登录无需带__device__=iPhone&terminal=H5参数
+                //若未注册移动决策平台功能点,单点登录时报错11100016,删除__device__=iPhone&terminal=H5参数即可
+                url: 'http://192.168.14.44/cgi-bin/luci?luci_username=root&luci_password=2018',
+                success: function (res) {
+                    // alert('登录成功'); 
+                    //var token = res.accessToken;
+                    //window.location.href = "http://IP:端口号/webroot/decision/url/mobile?fine_auth_token=" + token;
+                    //登录成功后不用再带token参数
+                    window.location.href = "http://192.168.14.44/cgi-bin/luci";
+
+                },
+                error: function () {
+                    alert('登录失败');
+                }
+            });
+
+        }
+        doSubmit();
+    </script>
+</head>
+
+</html>
